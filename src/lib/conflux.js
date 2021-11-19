@@ -8,6 +8,7 @@ const conflux = new Conflux({
   defaultGasPrice: 100, // The default gas price of your following transactions
   defaultGas: 1000000, // The default gas of your following transactions
   logger: console,
+  networkId: 1,
 })
 
 export const ContractCoin = {

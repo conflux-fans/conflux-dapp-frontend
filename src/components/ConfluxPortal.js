@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { util } from 'js-conflux-sdk'
+import { Drip } from 'js-conflux-sdk'
 
 import conflux from '../lib/conflux'
 import confluxPortal from '../lib/conflux-portal'
@@ -30,7 +30,7 @@ export default class ConfluxPortal extends PureComponent {
     }
     this.setState({ balance: '' })
     const balance = await conflux.getBalance(this.state.account)
-    this.setState({ balance: util.unit.fromDripToCFX(balance) })
+    this.setState({ balance: Drip(balance).toCFX() })
   }
 
   renderPortalButton = () => {
